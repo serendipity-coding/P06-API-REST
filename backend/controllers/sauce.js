@@ -62,6 +62,7 @@ exports.getAllSauce = (req, res, next) => {
 
 
 exports.addLikeDislike = (req, res, next) => {
+  console.log('inside likedislike function');
  
   const sauceId = req.params.id
   if (req.body.like === 1) { // Si il s'agit d'un like
@@ -89,6 +90,8 @@ exports.addLikeDislike = (req, res, next) => {
       .then(() => { res.status(200).json({ message: 'Dislike ajouté !' }) })
       .catch((error) => res.status(400).json({ error }))
   }
+
+
   
 }
 
